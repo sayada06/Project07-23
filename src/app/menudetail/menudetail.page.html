@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" style="background-color: #E4A063;">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="9" push="3"><br> ไมมูเนาะห์ เครปญี่ปุ่นไส้ทะลัก <br>
+                                  (Maimunah, Japanese crepe with sato)</ion-col>
+      <ion-col size="3" pull="9"><img class="pic" src="../../assets/pic/logo.png"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card style="background-color: #C49871;" class="menu1" *ngFor="let i of items">
+    <img class="picmenu" src="../../assets/pic/product/1.1.jpg" alt="">
+    <h3 class="namemenu"><b>{{ i.name }}</b></h3>
+    <h4 class="pang"><b>เลือกแป้ง</b></h4>
+    <div class="pickpang">
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">แป้งต้นตำรับ</ion-checkbox></h5>
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">แป้งชาโคล</ion-checkbox></h5>
+    </div>
+
+    <h4 class="sauce"><b>เลือกซอส</b></h4>
+    <div class="picksauce">
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">ซอสช็อกโกแลต</ion-checkbox></h5>
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">นมข้น</ion-checkbox></h5>
+    </div>
+
+    <h4 class="note"><b>หมายเหตุ</b></h4>
+    <ion-input label="หมายเหตุ" label-placement="floating" fill="outline" placeholder="กรอกข้อมูลที่คุณต้องการเพิ่ม..." color="dark"></ion-input>
+
+
+      <ion-row class="input">
+        <ion-col class="quantity1">
+          <ion-item lines="none" class="quantity-selector" class="quantity">
+            จำนวน
+            <ion-button class="butplus" fill="outline" shape="round" color="success" (click)="decreaseQuantity()">-</ion-button>
+            <ion-input class="num" [value]="quantity" readonly></ion-input>
+            <ion-button class="butmi" fill="outline" shape="round" color="success" (click)="increaseQuantity()">+</ion-button>
+            ชิ้น
+          </ion-item>
+        </ion-col>
+
+        <ion-col class="price1">
+          <ion-item class="price">
+            ราคา<ion-label class="priceinput"> {{ totalPrice }}</ion-label>บาท
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    <ion-button class="confirm" shape="round" size="large" color="light" (click)="goToqueue()">ยืนยันออเดอร์</ion-button><br>
+
+  </ion-card>
+</ion-content>
