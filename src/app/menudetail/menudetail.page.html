@@ -9,19 +9,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card style="background-color: #C49871;" class="menu1" *ngFor="let i of items">
-    <img class="picmenu" src="../../assets/pic/product/1.1.jpg" alt="">
-    <h3 class="namemenu"><b>{{ i.name }}</b></h3>
+  <ion-card style="background-color: #C49871;" class="menu1" *ngIf="item">
+    <img class="picmenu" [src]="item.ImageURL" alt="">
+    <h3 class="namemenu"><b>{{ item.name }}</b></h3>
     <h4 class="pang"><b>เลือกแป้ง</b></h4>
     <div class="pickpang">
-      <h5><ion-checkbox justify="space-between" labelPlacement="end">แป้งต้นตำรับ</ion-checkbox></h5>
-      <h5><ion-checkbox justify="space-between" labelPlacement="end">แป้งชาโคล</ion-checkbox></h5>
+      <ion-radio-group>
+        <h5><ion-radio value="normal" labelPlacement="end">แป้งต้นตำหรับ</ion-radio></h5>
+        <h5><ion-radio value="Charcoal" labelPlacement="end">แป้งชาโคล</ion-radio></h5>
+      </ion-radio-group>
     </div>
 
     <h4 class="sauce"><b>เลือกซอส</b></h4>
     <div class="picksauce">
       <h5><ion-checkbox justify="space-between" labelPlacement="end">ซอสช็อกโกแลต</ion-checkbox></h5>
       <h5><ion-checkbox justify="space-between" labelPlacement="end">นมข้น</ion-checkbox></h5>
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">ซอสสตอเบอรี่</ion-checkbox></h5>
+      <h5><ion-checkbox justify="space-between" labelPlacement="end">ซอสคาราเมล</ion-checkbox></h5>
     </div>
 
     <h4 class="note"><b>หมายเหตุ</b></h4>
@@ -46,7 +50,8 @@
         </ion-col>
       </ion-row>
 
-    <ion-button class="confirm" shape="round" size="large" color="light" (click)="goToqueue()">ยืนยันออเดอร์</ion-button><br>
+      <ion-button class="confirm" shape="round" size="large" color="light" (click)="goToqueue()">ยืนยันออเดอร์</ion-button><br>
+
 
   </ion-card>
 </ion-content>

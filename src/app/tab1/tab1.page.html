@@ -18,14 +18,14 @@
     <ion-grid>
       <h3><b>เมนูแนะนำ</b></h3>
      <ion-row>
-        <ion-col size="6" size-md="3" size-lg="3"  *ngFor="let i of items">
+        <ion-col size="6" size-md="3" size-lg="3" *ngFor="let i of items">
           <ion-card class="menu">
-            <ion-label>
+            <ion-label >
               <img [src]="i.ImageURL" alt="">
-             <ion-card-title>{{ i.name }}</ion-card-title>
+             <ion-card-title><h2>{{ i.name }}</h2></ion-card-title>
             </ion-label>
               <h6>{{ i.price }} ฿
-                <ion-button color="medium" shape="round" size="small" class="plus" (click)="gotomenudetail()">✛</ion-button>
+                <ion-button color="medium" shape="round" size="small" class="plus" (click)="gotomenudetail(i)">✛</ion-button>
               </h6>
           </ion-card>
         </ion-col>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menudetail',
@@ -10,9 +11,12 @@ export class MenudetailPage implements OnInit {
   quantity: number = 1;
   unitPrice: number = 45;
   totalPrice: number | undefined;
+  item : any;
 
-  constructor(private menu: NavController) {
+  constructor(private detail: NavController,private route: Router) {
     this.calculateTotalPrice();
+    const navigation = this.route.getCurrentNavigation();
+    this.item = navigation?.extras?.state?.['i'];
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
@@ -35,34 +39,6 @@ export class MenudetailPage implements OnInit {
   }
 
   goToqueue() {
-    this.menu.navigateForward('/queue');
+    this.detail.navigateForward('/queue');
   }
-
-  items=[
-    {
-      id: 1,
-      name:'นูเทล่า ฝอยทอง โกโก้ครั้น เยลลี่',
-      price: 45,
-      ImageURL:'../../assets/pic/product/1.jpg'
-    },
-    {
-      id: 2,
-      name:'เครปกรอบวิปครีม สตอสด',
-      price: 69,
-      ImageURL:'../../assets/pic/product/2.jpg'
-    },
-    {
-      id: 3,
-      name:'ไข่ไก่ ลูกเกด เม็ดสี เยลลี่',
-      price: 45,
-      ImageURL:'../../assets/pic/product/3.jpg'
-    },
-    {
-      id: 4,
-      name:'เครปกรอบวิปครีม โอริโอ้ ไมโล',
-      price: 59,
-      ImageURL:'../../assets/pic/product/4.jpg'
-    },
-  ];
-
 }
