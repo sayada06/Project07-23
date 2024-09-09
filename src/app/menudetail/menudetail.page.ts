@@ -12,10 +12,11 @@ export class MenudetailPage implements OnInit {
   totalPrice: number | undefined;
   item : any;
 
-  constructor(private detail: NavController,private route: Router) {
+  constructor(private navCtrl: NavController,private route: Router) {
     const navigation = this.route.getCurrentNavigation();
     this.item = navigation?.extras?.state?.['i'];
   }
+
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -32,7 +33,7 @@ export class MenudetailPage implements OnInit {
 
 
   goToqueue() {
-    this.detail.navigateForward('/queue');
+    this.navCtrl.navigateForward('/queue');
   }
 
 }

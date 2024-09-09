@@ -9,6 +9,7 @@ import { MenudetailPage } from '../menudetail/menudetail.page';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+filteredItem: any;
 menudetail(_t28: { name: string; price: number; ImageURL: string; }) {
 throw new Error('Method not implemented.');
 }
