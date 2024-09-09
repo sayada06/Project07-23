@@ -9,12 +9,10 @@ import { Router } from '@angular/router';
 })
 export class MenudetailPage implements OnInit {
   quantity: number = 1;
-  unitPrice: number = 45;
   totalPrice: number | undefined;
   item : any;
 
   constructor(private detail: NavController,private route: Router) {
-    this.calculateTotalPrice();
     const navigation = this.route.getCurrentNavigation();
     this.item = navigation?.extras?.state?.['i'];
   }
@@ -24,21 +22,17 @@ export class MenudetailPage implements OnInit {
 
   increaseQuantity() {
     this.quantity++;
-    this.calculateTotalPrice();
   }
 
   decreaseQuantity() {
     if (this.quantity > 1) {
       this.quantity--;
-      this.calculateTotalPrice();
     }
   }
 
-  calculateTotalPrice() {
-    this.totalPrice = this.unitPrice * this.quantity;
-  }
 
   goToqueue() {
     this.detail.navigateForward('/queue');
   }
+
 }
