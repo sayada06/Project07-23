@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'menudetail',
     loadChildren: () => import('./menudetail/menudetail.module').then( m => m.MenudetailPageModule)
   },
+  {
+    path: 'qback2',
+    loadChildren: () => import('./qback2/qback2.module').then( m => m.Qback2PageModule)
+  },
 ];
 @NgModule({
   imports: [

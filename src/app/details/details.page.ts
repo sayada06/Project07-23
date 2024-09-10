@@ -10,10 +10,10 @@ export class DetailsPage implements OnInit {
 
   constructor(private navCtrl: NavController) { }
 
-  goToqueueback() {
-    this.navCtrl.navigateForward('/queueback');
+  goToqback2() {
+    this.navCtrl.navigateForward('/qback2');
   }
-  
+
   ngOnInit() {
   }
 
