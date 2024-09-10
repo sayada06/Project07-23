@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" style="background-color: #E4A063;">
+<ion-toolbar color="creamb">
   <ion-grid>
     <ion-row>
       <ion-col size="9" push="3"><br> ไมมูเนาะห์ เครปญี่ปุ่นไส้ทะลัก <br>
@@ -6,7 +6,7 @@
       <ion-col size="3" pull="9"><a href="/tabs/tab1"><img class="pic" src="../../assets/pic/logo.png" alt="กลับไปหน้าแรก"></a></ion-col>
     </ion-row>
   </ion-grid>
-</ion-header>
+</ion-toolbar>
 
 <ion-content [fullscreen]="true">
   <ion-card style="background-color: #C49871;" class="menu1" *ngIf="item">
@@ -33,7 +33,7 @@
 
 
       <ion-row class="input">
-        <ion-col class="quantity1">
+        <ion-col size="6.5" push="5.5" class="quantity1">
           <ion-item lines="none" class="quantity-selector" class="quantity">
             จำนวน
             <ion-button class="butplus" fill="outline" shape="round" color="success" (click)="decreaseQuantity()">-</ion-button>
@@ -43,7 +43,7 @@
           </ion-item>
         </ion-col>
 
-        <ion-col class="price1">
+        <ion-col size="5.5" pull="6.5" class="price1" >
           <ion-item class="price">
             ราคา<ion-label class="priceinput">{{ item.price * quantity }}</ion-label>บาท
           </ion-item>
